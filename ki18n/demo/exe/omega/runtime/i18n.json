@@ -1,0 +1,8 @@
+{
+  "defaultLanguage": "en",
+  "fallbackLanguage": "en",
+  "strings": {
+    "en": "strings/en.json",
+    "fr": "strings/fr.json"
+  }
+}

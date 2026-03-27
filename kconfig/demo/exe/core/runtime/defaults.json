@@ -1,0 +1,33 @@
+{
+  "client": {
+    "Language": "en"
+  },
+  "feature": {
+    "enabled": false
+  },
+  "network": {
+    "port": 8080
+  },
+  "numbers": {
+    "u32": "123"
+  },
+  "limits": {
+    "timeout": 1.25
+  },
+  "positive": {
+    "u16": 1,
+    "float": 0.5
+  },
+  "text": {
+    "name": "default-name"
+  },
+  "values": {
+    "weights": [
+      1.0,
+      2.0
+    ]
+  },
+  "assets": {
+    "banner": "assets/banner.txt"
+  }
+}

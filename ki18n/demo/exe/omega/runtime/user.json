@@ -1,0 +1,31 @@
+{
+  "client": {
+    "Language": "es"
+  },
+  "feature": {
+    "enabled": true
+  },
+  "network": {
+    "port": 9001
+  },
+  "numbers": {
+    "u32": "65536"
+  },
+  "limits": {
+    "timeout": 2.75
+  },
+  "positive": {
+    "u16": 7,
+    "float": 1.25
+  },
+  "text": {
+    "name": "runtime-user"
+  },
+  "values": {
+    "weights": [
+      0.25,
+      0.5,
+      1.0
+    ]
+  }
+}

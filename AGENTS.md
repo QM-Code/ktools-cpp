@@ -2,7 +2,8 @@
 
 Assume `../ktools/AGENTS.md` has already been read.
 
-`ktools-cpp/` is the C++ workspace for the ktools ecosystem. It groups the C++ repos that are normally built and tested together:
+`ktools-cpp/` is the C++ workspace for the ktools ecosystem. It groups the C++
+components that are normally built and tested together inside one repo:
 
 - `kcli/`
 - `ktrace/`
@@ -17,8 +18,8 @@ expected on `PATH`.
 This workspace owns C++-specific concerns such as:
 
 - C++ build and packaging flow
-- repo-to-repo SDK dependencies inside the C++ stack
-- batch orchestration across the C++ repos
+- SDK dependencies between C++ workspace components
+- batch orchestration across the C++ workspace components
 - C++ implementation conventions and constraints
 
 This workspace does not own the cross-language conceptual definition of the tools. That belongs at the overview/spec level.
@@ -27,10 +28,10 @@ This workspace does not own the cross-language conceptual definition of the tool
 
 When working in `ktools-cpp/`:
 
-1. First determine whether the task belongs at the workspace root or in a child repo.
-2. Prefer making changes in the narrowest repo that actually owns the behavior.
+1. First determine whether the task belongs at the workspace root or in a child component directory.
+2. Prefer making changes in the narrowest component that actually owns the behavior.
 3. Use the root workspace only for C++-stack-wide concerns such as orchestration, dependency ordering, or root documentation.
-4. Read the relevant child repo `AGENTS.md` and `README.md` files before changing code in that repo.
+4. Read the relevant child directory `AGENTS.md` and `README.md` files before changing code in that area.
 
 ## Build Model
 
@@ -41,10 +42,10 @@ Typical workspace commands:
 ```bash
 kbuild --batch --build-latest
 kbuild --batch --clean-latest
-kbuild --batch --git-sync "Sync child repos"
+kbuild --git-sync "Sync C++ workspace"
 ```
 
-Typical child-repo commands:
+Typical component-local commands:
 
 ```bash
 cd kcli

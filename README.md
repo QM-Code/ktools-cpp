@@ -1,8 +1,10 @@
 # ktools-cpp
 
-`ktools-cpp/` is the C++ workspace for the broader **ktools** ecosystem. It pins a compatible set of C++ repos that are normally built together while still allowing each child repo to be used independently.
+`ktools-cpp/` is the C++ workspace for the broader **ktools** ecosystem. It
+collects the C++ implementations of the shared libraries in one repo while
+preserving clear component boundaries inside the tree.
 
-The main child repos are:
+The main workspace components are:
 
 - `kcli/`
 - `ktrace/`
@@ -13,16 +15,10 @@ If you are building, integrating, or consuming the C++ SDKs, start here. If you 
 
 ## Getting Started
 
-Clone the full pinned workspace with submodules:
+Clone the workspace normally:
 
 ```bash
-git clone --recurse-submodules git@github.com:QM-Code/ktools-cpp.git
-```
-
-If you already cloned without submodules:
-
-```bash
-git submodule update --init --recursive
+git clone git@github.com:QM-Code/ktools-cpp.git
 ```
 
 The shared build tool is `kbuild`, expected on `PATH`.
@@ -34,7 +30,8 @@ kbuild --help
 kbuild --batch --build-latest
 ```
 
-`kbuild --batch` runs the command across the configured child repos in dependency order.
+`kbuild --batch` runs the command across the configured workspace components in
+dependency order.
 
 ## Workspace Build Model
 
@@ -46,7 +43,7 @@ kbuild --batch --clean-latest
 kbuild --batch --clean-all
 ```
 
-Use an individual child repo when you only need one SDK or tool:
+Use an individual component directory when you only need one SDK or tool:
 
 ```bash
 cd kcli
@@ -60,7 +57,7 @@ General output layout:
 - demo build tree: `demo/<demo>/build/<slot>/`
 - demo SDK install prefix: `demo/<demo>/build/<slot>/sdk/` when applicable
 
-## Repo Map
+## Workspace Map
 
 - `kcli/`
   CLI parsing SDK with top-level option parsing, inline `--<root>` parsing, aliases, and demo SDK/executable examples.
@@ -93,18 +90,19 @@ Running `kbuild` with no arguments from a valid repo root prints usage.
 
 ## Dependency Shape
 
-The C++ repos are intended to layer on each other:
+The C++ components are intended to layer on each other:
 
 1. `kcli`
 2. `ktrace`
 3. `kconfig`
 4. `ki18n`
 
-That dependency order matters both for SDK consumption and for demo builds. Later repos may depend on SDK artifacts produced by earlier repos.
+That dependency order matters both for SDK consumption and for demo builds.
+Later components may depend on SDK artifacts produced by earlier ones.
 
 ## Where To Go Next
 
-For implementation and API details, use the child repo docs directly:
+For implementation and API details, use the component docs directly:
 
 - [kcli/README.md](kcli/README.md)
 - [ktrace/README.md](ktrace/README.md)

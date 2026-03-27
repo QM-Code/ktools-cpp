@@ -1,0 +1,23 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(KtraceSDK CONFIG REQUIRED)
+find_dependency(KcliSDK CONFIG REQUIRED)
+
+include("${CMAKE_CURRENT_LIST_DIR}/KconfigSDKTargets.cmake")
+
+if(NOT TARGET kconfig::sdk)
+    if(TARGET kconfig::sdk_shared)
+        add_library(kconfig::sdk INTERFACE IMPORTED)
+        set_property(TARGET kconfig::sdk PROPERTY
+            INTERFACE_LINK_LIBRARIES kconfig::sdk_shared
+        )
+    elseif(TARGET kconfig::sdk_static)
+        add_library(kconfig::sdk INTERFACE IMPORTED)
+        set_property(TARGET kconfig::sdk PROPERTY
+            INTERFACE_LINK_LIBRARIES kconfig::sdk_static
+        )
+    endif()
+endif()
+
+check_required_components(KconfigSDK)

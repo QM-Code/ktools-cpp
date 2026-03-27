@@ -1,0 +1,24 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(KconfigSDK CONFIG REQUIRED)
+find_dependency(KcliSDK CONFIG REQUIRED)
+find_dependency(KtraceSDK CONFIG REQUIRED)
+
+include("${CMAKE_CURRENT_LIST_DIR}/Ki18nSDKTargets.cmake")
+
+if(NOT TARGET ki18n::sdk)
+    if(TARGET ki18n::sdk_shared)
+        add_library(ki18n::sdk INTERFACE IMPORTED)
+        set_property(TARGET ki18n::sdk PROPERTY
+            INTERFACE_LINK_LIBRARIES ki18n::sdk_shared
+        )
+    elseif(TARGET ki18n::sdk_static)
+        add_library(ki18n::sdk INTERFACE IMPORTED)
+        set_property(TARGET ki18n::sdk PROPERTY
+            INTERFACE_LINK_LIBRARIES ki18n::sdk_static
+        )
+    endif()
+endif()
+
+check_required_components(Ki18nSDK)

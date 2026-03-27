@@ -1,0 +1,39 @@
+{
+  "project": {
+    "title": "Karma CLI Tools",
+    "id": "kcli"
+  },
+  "git": {
+    "url": "https://github.com/QM-Code/kcli",
+    "auth": "git@github.com:QM-Code/kcli.git"
+  },
+  "cmake": {
+    "minimum_version": "3.20",
+    "tests": true,
+    "sdk": {
+      "package_name": "KcliSDK"
+    }
+  },
+  "build": {
+    "jobs": 4,
+    "type": "shared",
+    "demos": [
+      "bootstrap",
+      "sdk/alpha",
+      "sdk/beta",
+      "sdk/gamma",
+      "exe/core",
+      "exe/omega"
+    ],
+    "defaults": {
+      "demos": [
+        "bootstrap",
+        "sdk/alpha",
+        "sdk/beta",
+        "sdk/gamma",
+        "exe/core",
+        "exe/omega"
+      ]
+    }
+  }
+}

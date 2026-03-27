@@ -1,0 +1,19 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/KcliSDKTargets.cmake")
+
+if(NOT TARGET kcli::sdk)
+    if(TARGET kcli::sdk_shared)
+        add_library(kcli::sdk INTERFACE IMPORTED)
+        set_property(TARGET kcli::sdk PROPERTY
+            INTERFACE_LINK_LIBRARIES kcli::sdk_shared
+        )
+    elseif(TARGET kcli::sdk_static)
+        add_library(kcli::sdk INTERFACE IMPORTED)
+        set_property(TARGET kcli::sdk PROPERTY
+            INTERFACE_LINK_LIBRARIES kcli::sdk_static
+        )
+    endif()
+endif()
+
+check_required_components(KcliSDK)

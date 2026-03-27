@@ -1,0 +1,22 @@
+{
+  "client": {
+    "Language": "fr"
+  },
+  "network": {
+    "port": 7777
+  },
+  "positive": {
+    "u16": 11
+  },
+  "text": {
+    "name": "runtime-session"
+  },
+  "values": {
+    "weights": [
+      9.0,
+      8.0,
+      7.0,
+      6.0
+    ]
+  }
+}
