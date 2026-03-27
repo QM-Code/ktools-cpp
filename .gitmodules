@@ -1,0 +1,15 @@
+[submodule "kbuild"]
+	path = kbuild
+	url = /home/karmak/dev/ktools/kbuild
+[submodule "kcli"]
+	path = kcli
+	url = /home/karmak/dev/ktools/kcli
+[submodule "ktrace"]
+	path = ktrace
+	url = /home/karmak/dev/ktools/ktrace
+[submodule "kconfig"]
+	path = kconfig
+	url = /home/karmak/dev/ktools/kconfig
+[submodule "ki18n"]
+	path = ki18n
+	url = /home/karmak/dev/ktools/ki18n

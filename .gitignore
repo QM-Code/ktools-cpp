@@ -1,0 +1,7 @@
+# Build directories
+/build/
+/demo/**/build/
+
+# Python caches
+__pycache__/
+*.pyc

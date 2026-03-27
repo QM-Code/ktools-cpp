@@ -1,0 +1,18 @@
+{
+  "project": {
+    "title": "Karma Tools C++ Superproject",
+    "id": "ktools_cpp"
+  },
+  "git": {
+    "url": "https://github.com/QM-Code/ktools-cpp",
+    "auth": "git@github.com:QM-Code/ktools-cpp.git"
+  },
+  "batch": {
+    "repos": [
+      "kcli",
+      "ktrace",
+      "kconfig",
+      "ki18n"
+    ]
+  }
+}
