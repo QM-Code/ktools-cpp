@@ -20,10 +20,10 @@ SDK output:
 ## Build And Test Demos
 
 ```bash
-# Builds SDK plus kbuild.json "build.defaults.demos".
+# Builds SDK plus .kbuild.json "build.defaults.demos".
 kbuild --build-latest
 
-# Explicit demo-only run (uses build.demos when no args are provided).
+# Explicit demo-only run (uses .kbuild.json build.demos when no args are provided).
 kbuild --build-demos
 
 ./demo/exe/core/build/latest/test
