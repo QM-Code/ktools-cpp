@@ -53,4 +53,5 @@ kbuild --build-latest
 ```
 
 Use `kbuild` from `PATH` as the entrypoint.
-
+For commit/push sync, treat `kbuild --git-sync "<message>"` as the standard
+workspace workflow.
