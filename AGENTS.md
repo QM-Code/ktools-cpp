@@ -55,3 +55,5 @@ kbuild --build-latest
 Use `kbuild` from `PATH` as the entrypoint.
 For commit/push sync, treat `kbuild --git-sync "<message>"` as the standard
 workspace workflow.
+After a coherent batch of changes in this workspace or one of its child
+components, return to `ktools-cpp/` and run that sync command promptly.

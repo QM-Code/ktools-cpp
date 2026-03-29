@@ -54,3 +54,5 @@ kbuild --clean-latest
 2. Keep public API changes deliberate; downstream repos in the C++ stack depend on this SDK.
 3. Prefer reading the demos when validating intended behavior; they are part of the contract, not just examples.
 4. Surface issues or recommendations when you find them.
+5. After a coherent batch of changes in `ktools-cpp/ktrace/`, return to the
+   `ktools-cpp/` workspace root and run `kbuild --git-sync "<message>"`.
